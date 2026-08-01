@@ -135,7 +135,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ activeTab, setActiveTab }) => 
         <div className="inline-flex p-2 rounded-xl bg-[#FF6A00]/10 border border-[#FF6A00]/20 mb-2">
           <Sparkles className="w-4 h-4 text-[#FF6A00]" />
         </div>
-        <p className="text-xs font-bold text-zinc-200">Iron Temple Portal v3.4</p>
+        <p className="text-xs font-bold text-zinc-200">Royal Fitness Portal v3.4</p>
         <p className="text-[10px] text-zinc-400 mt-0.5">PostgreSQL Engine Active</p>
       </div>
     </aside>

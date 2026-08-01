@@ -3,6 +3,7 @@ import { useAuth } from '../../context/AuthContext';
 import { UserRole } from '../../types';
 import {
   Dumbbell,
+  Crown,
   Shield,
   User,
   QrCode,
@@ -57,9 +58,10 @@ export const Header: React.FC<HeaderProps> = ({
             onClick={() => switchRole('public')}
             className="flex items-center gap-3 group text-left cursor-pointer focus:outline-none"
           >
-            <div className="w-10 h-10 rounded-xl bg-[#FF6A00] p-0.5 shadow-lg shadow-[#FF6A00]/25 group-hover:scale-105 transition-all">
-              <div className="w-full h-full bg-[#050505] rounded-[10px] flex items-center justify-center">
-                <Dumbbell className="w-5 h-5 text-[#FF6A00] transform -rotate-45 group-hover:rotate-0 transition-transform duration-300" />
+            <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-[#FF6A00] via-orange-500 to-amber-400 p-0.5 shadow-lg shadow-[#FF6A00]/25 group-hover:scale-105 transition-all">
+              <div className="w-full h-full bg-[#050505] rounded-[10px] flex items-center justify-center relative overflow-hidden">
+                <Crown className="w-3.5 h-3.5 text-amber-300 absolute top-0.5 left-1/2 -translate-x-1/2 drop-shadow" />
+                <Dumbbell className="w-5 h-5 text-[#FF6A00] transform -rotate-45 group-hover:rotate-0 transition-transform duration-300 mt-2" />
               </div>
             </div>
             <div>

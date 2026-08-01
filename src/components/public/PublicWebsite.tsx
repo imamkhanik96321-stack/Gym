@@ -5,6 +5,7 @@ import { useAuth } from '../../context/AuthContext';
 import { MembershipPlan } from '../../types';
 import {
   Dumbbell,
+  Crown,
   Flame,
   Zap,
   CheckCircle2,
@@ -32,6 +33,9 @@ import {
   Twitter,
   Award,
   Video,
+  Trophy,
+  Image,
+  Send,
 } from 'lucide-react';
 
 interface PublicWebsiteProps {
@@ -132,7 +136,7 @@ export const PublicWebsite: React.FC<PublicWebsiteProps> = ({ onSelectRole }) =>
   };
 
   const faqs = [
-    { q: 'Can I switch between branches with one membership pass?', a: 'Yes! Pro and Elite VIP memberships include multi-branch access across all our Central Connaught Place, Bandra Elite, and Indiranagar Iron Temple centers.' },
+    { q: 'Can I switch between branches with one membership pass?', a: 'Yes! Pro and Elite VIP memberships include multi-branch access across all our Central Connaught Place, Bandra Elite, and Indiranagar Royal Fitness centers.' },
     { q: 'How does the QR attendance scanner work at the reception desk?', a: 'Simply open your mobile Digital Pass in the Member Portal, show the live QR code or barcode to our desk optical scanner, and your check-in is logged instantly.' },
     { q: 'Do you offer custom diet and workout plan design?', a: 'All Pro and Elite plans come with certified trainer consultation and digital workout/diet builders accessible directly from your member app.' },
     { q: 'What payment methods are supported for online subscription renewal?', a: 'We support Stripe Credit/Debit cards, UPI QR Code direct transfers, Razorpay, and Over-the-Counter Cash at reception.' },
@@ -145,29 +149,33 @@ export const PublicWebsite: React.FC<PublicWebsiteProps> = ({ onSelectRole }) =>
       <div className="ambient-glow-2" />
 
       {/* Top Banner Navigation */}
-      <nav className="sticky top-0 z-40 bg-white/[0.02] backdrop-blur-2xl border-b border-white/10 px-4 lg:px-8 py-3.5 flex items-center justify-between">
+      <nav id="home" className="sticky top-0 z-40 bg-[#050505]/90 backdrop-blur-2xl border-b border-white/10 px-4 lg:px-8 py-3.5 flex items-center justify-between">
         <div className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-2xl bg-[#FF6A00] p-0.5 shadow-lg shadow-[#FF6A00]/20">
-            <div className="w-full h-full bg-[#050505] rounded-[14px] flex items-center justify-center">
-              <Dumbbell className="w-5 h-5 text-[#FF6A00] transform -rotate-45" />
+          <div className="w-10 h-10 rounded-2xl bg-gradient-to-tr from-[#FF6A00] via-orange-500 to-amber-400 p-0.5 shadow-lg shadow-[#FF6A00]/25">
+            <div className="w-full h-full bg-[#050505] rounded-[14px] flex items-center justify-center relative overflow-hidden">
+              <Crown className="w-3.5 h-3.5 text-amber-300 absolute top-0.5 left-1/2 -translate-x-1/2 drop-shadow" />
+              <Dumbbell className="w-5 h-5 text-[#FF6A00] transform -rotate-45 mt-2" />
             </div>
           </div>
           <div>
             <span className="font-extrabold text-lg tracking-tight text-white">{settings.gymName}</span>
-            <span className="text-[10px] text-[#FF6A00] block font-semibold -mt-1">Premium Fitness Club</span>
+            <span className="text-[10px] text-[#FF6A00] block font-semibold -mt-1">Train Like Royalty</span>
           </div>
         </div>
 
-        {/* Quick Section Nav Links */}
-        <div className="hidden lg:flex items-center gap-6 text-xs font-semibold text-zinc-400">
+        {/* Navbar Links */}
+        <div className="hidden lg:flex items-center gap-5 text-xs font-semibold text-zinc-300">
+          <a href="#home" className="hover:text-[#FF6A00] transition-colors">Home</a>
+          <a href="#about" className="hover:text-[#FF6A00] transition-colors">About</a>
+          <a href="#membership" className="hover:text-[#FF6A00] transition-colors">Membership</a>
           <a href="#programs" className="hover:text-[#FF6A00] transition-colors">Programs</a>
-          <a href="#pricing" className="hover:text-[#FF6A00] transition-colors">Pricing & Plans</a>
-          <a href="#bmi" className="hover:text-[#FF6A00] transition-colors">BMI Calculator</a>
-          <a href="#trainers" className="hover:text-[#FF6A00] transition-colors">Elite Coaches</a>
-          <a href="#faq" className="hover:text-[#FF6A00] transition-colors">FAQ</a>
+          <a href="#trainers" className="hover:text-[#FF6A00] transition-colors">Trainers</a>
+          <a href="#transformations" className="hover:text-[#FF6A00] transition-colors">Transformations</a>
+          <a href="#gallery" className="hover:text-[#FF6A00] transition-colors">Gallery</a>
+          <a href="#contact" className="hover:text-[#FF6A00] transition-colors">Contact</a>
         </div>
 
-        {/* Quick Portal Switcher */}
+        {/* Quick Actions */}
         <div className="flex items-center gap-3">
           <button
             onClick={() => setShowTrialModal(true)}
@@ -213,35 +221,35 @@ export const PublicWebsite: React.FC<PublicWebsiteProps> = ({ onSelectRole }) =>
           {/* Left Text Content */}
           <div className="lg:col-span-6 space-y-6 text-left">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#FF6A00]/10 border border-[#FF6A00]/30 text-[#FF6A00] text-xs font-bold">
-              <Sparkles className="w-4 h-4 animate-pulse" />
-              <span>PREMIUM INDIAN FITNESS & WELLNESS CLUB</span>
+              <Trophy className="w-4 h-4 text-amber-400 animate-pulse" />
+              <span>🏆 India's Premium Fitness Destination</span>
             </div>
 
             <h1 className="text-4xl sm:text-6xl font-black tracking-tight text-white leading-none">
               Transform Your Body. <br />
               <span className="bg-gradient-to-r from-[#FF6A00] via-amber-400 to-yellow-500 bg-clip-text text-transparent">
-                Master Your Limits.
+                Rule Your Fitness Journey.
               </span>
             </h1>
 
             <p className="text-zinc-400 text-sm sm:text-base leading-relaxed max-w-xl">
-              Precision fitness management powered by digital QR attendance, automated workout & diet builders, real-time analytics, and elite personal coaching.
+              Experience elite coaching, cutting-edge equipment, personalized workout programs, expert nutrition guidance, and measurable results at Royal Fitness Club.
             </p>
 
             <div className="flex flex-wrap gap-4 pt-2">
-              <button
-                onClick={() => setShowTrialModal(true)}
+              <a
+                href="#membership"
                 className="px-6 py-3.5 rounded-2xl bg-[#FF6A00] hover:bg-[#FF6A00]/90 text-black font-extrabold text-sm shadow-xl shadow-[#FF6A00]/25 flex items-center gap-2 cursor-pointer transition-all"
               >
-                <span>Start 7-Day Free Trial</span>
+                <span>Join Now</span>
                 <ArrowRight className="w-4 h-4" />
-              </button>
-              <a
-                href="#pricing"
+              </a>
+              <button
+                onClick={() => setShowTrialModal(true)}
                 className="px-6 py-3.5 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/10 text-zinc-200 font-bold text-sm flex items-center gap-2 cursor-pointer transition-all backdrop-blur-md"
               >
-                <span>Explore Membership Plans</span>
-              </a>
+                <span>Book Free Trial</span>
+              </button>
             </div>
 
             {/* Metrics Ticker */}
@@ -487,8 +495,60 @@ export const PublicWebsite: React.FC<PublicWebsiteProps> = ({ onSelectRole }) =>
         </div>
       </section>
 
+      {/* ABOUT SECTION */}
+      <section id="about" className="py-20 px-4 lg:px-8 max-w-7xl mx-auto border-t border-zinc-900">
+        <div className="grid lg:grid-cols-12 gap-12 items-center">
+          <div className="lg:col-span-6 space-y-5">
+            <span className="text-xs font-bold uppercase tracking-widest text-orange-400 bg-orange-500/10 px-3.5 py-1.5 rounded-full border border-orange-500/20">
+              ABOUT ROYAL FITNESS CLUB
+            </span>
+            <h2 className="text-3xl sm:text-5xl font-black text-white leading-tight">
+              Where Royalty Meets <br />
+              <span className="bg-gradient-to-r from-orange-400 to-amber-400 bg-clip-text text-transparent">
+                Relentless Performance.
+              </span>
+            </h2>
+            <p className="text-zinc-300 text-sm leading-relaxed">
+              Royal Fitness Club is a premium fitness destination offering world-class strength training, functional fitness, personal coaching, nutrition guidance, and transformation programs in a luxurious environment.
+            </p>
+            <p className="text-zinc-400 text-xs sm:text-sm leading-relaxed">
+              Founded on principles of scientific progression and athletic mastery, our facilities combine top-tier biomechanical machinery, Olympic platforms, digital tracking, and certified coaches to elevate your physique and performance.
+            </p>
+
+            <div className="grid grid-cols-2 gap-4 pt-4">
+              <div className="p-4 rounded-2xl bg-zinc-900/80 border border-zinc-800">
+                <Crown className="w-5 h-5 text-amber-400 mb-2" />
+                <p className="text-sm font-bold text-white">World-Class Equipment</p>
+                <p className="text-xs text-zinc-400 mt-1">Eleiko, Hammer Strength & Prime Fitness rigs</p>
+              </div>
+              <div className="p-4 rounded-2xl bg-zinc-900/80 border border-zinc-800">
+                <ShieldCheck className="w-5 h-5 text-orange-400 mb-2" />
+                <p className="text-sm font-bold text-white">Certified Master Coaches</p>
+                <p className="text-xs text-zinc-400 mt-1">IFBB & CSCS certified personal trainers</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="lg:col-span-6 relative">
+            <div className="absolute -inset-2 bg-gradient-to-tr from-[#FF6A00]/20 to-amber-500/10 rounded-3xl blur-2xl -z-10" />
+            <div className="grid grid-cols-2 gap-4">
+              <img
+                src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=600&auto=format&fit=crop&q=80"
+                alt="Royal Fitness Gym Floor"
+                className="rounded-3xl h-64 object-cover w-full border border-zinc-800 shadow-xl"
+              />
+              <img
+                src="https://images.unsplash.com/photo-1574680096145-d05b474e2155?w=600&auto=format&fit=crop&q=80"
+                alt="Royal Fitness Training"
+                className="rounded-3xl h-64 object-cover w-full border border-zinc-800 shadow-xl mt-6"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* MEMBERSHIP PRICING SECTION */}
-      <section id="pricing" className="py-20 px-4 lg:px-8 max-w-7xl mx-auto border-t border-zinc-900">
+      <section id="membership" className="py-20 px-4 lg:px-8 max-w-7xl mx-auto border-t border-zinc-900">
         <div className="text-center max-w-2xl mx-auto mb-12">
           <span className="text-xs font-bold uppercase tracking-widest text-orange-400 bg-orange-500/10 px-3 py-1 rounded-full border border-orange-500/20">
             TRANSPARENT PRICING
@@ -627,6 +687,196 @@ export const PublicWebsite: React.FC<PublicWebsiteProps> = ({ onSelectRole }) =>
         </div>
       </section>
 
+      {/* TRANSFORMATIONS SECTION */}
+      <section id="transformations" className="py-20 px-4 lg:px-8 max-w-7xl mx-auto border-t border-zinc-900">
+        <div className="text-center max-w-2xl mx-auto mb-16">
+          <span className="text-xs font-bold uppercase tracking-widest text-orange-400 bg-orange-500/10 px-3.5 py-1.5 rounded-full border border-orange-500/20">
+            MEMBER SUCCESS
+          </span>
+          <h2 className="text-3xl sm:text-4xl font-black text-white mt-3">Transformations That Inspire</h2>
+          <p className="text-xs sm:text-sm text-zinc-400 mt-2">Real member results achieved through dedicated coaching and structured nutrition.</p>
+        </div>
+
+        <div className="grid md:grid-cols-3 gap-6">
+          {[
+            {
+              name: 'Rahul Sharma',
+              duration: '16 Weeks Program',
+              achievement: '-18 kg Fat Loss | +4.5 kg Lean Muscle',
+              quote: 'Royal Fitness Club completely altered my mindset and body structure. The coaches and facility are top tier.',
+              image: 'https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?w=500&auto=format&fit=crop&q=80',
+              tag: 'Fat Loss & Hypertrophy',
+            },
+            {
+              name: 'Priya Patel',
+              duration: '12 Weeks Program',
+              achievement: '14% Body Fat Reduction | Core Power',
+              quote: 'The personalized nutrition plan and functional training restored my energy and strength post-pregnancy.',
+              image: 'https://images.unsplash.com/photo-1518611012118-696072aa579a?w=500&auto=format&fit=crop&q=80',
+              tag: 'Toning & Mobility',
+            },
+            {
+              name: 'Vikram Singh',
+              duration: '24 Weeks Program',
+              achievement: '+8 kg Muscle Mass | Powerlifting Peak',
+              quote: 'Training with Coach Marcus pushed my squat and deadlift numbers to national competitive levels.',
+              image: 'https://images.unsplash.com/photo-1517838277536-f5f99be501cd?w=500&auto=format&fit=crop&q=80',
+              tag: 'Strength & Recomp',
+            },
+          ].map((t, idx) => (
+            <div key={idx} className="rounded-3xl bg-zinc-900/60 border border-zinc-800 p-6 glass-panel flex flex-col justify-between hover:border-orange-500/40 transition-all">
+              <div>
+                <div className="relative h-52 rounded-2xl overflow-hidden mb-4 border border-zinc-800">
+                  <img src={t.image} alt={t.name} className="w-full h-full object-cover" />
+                  <span className="absolute top-3 left-3 text-[10px] font-bold uppercase px-2.5 py-1 rounded-full bg-black/80 text-orange-400 border border-orange-500/30 backdrop-blur-md">
+                    {t.tag}
+                  </span>
+                </div>
+                <h3 className="text-lg font-bold text-white">{t.name}</h3>
+                <p className="text-xs text-orange-400 font-semibold">{t.duration}</p>
+                <div className="p-3 rounded-xl bg-zinc-950 border border-zinc-800 my-3">
+                  <p className="text-xs font-bold text-emerald-400">{t.achievement}</p>
+                </div>
+                <p className="text-xs text-zinc-400 italic leading-relaxed">"{t.quote}"</p>
+              </div>
+
+              <button
+                onClick={() => setShowTrialModal(true)}
+                className="mt-4 w-full py-2.5 rounded-xl bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 text-xs font-bold text-white hover:text-orange-400 transition-all cursor-pointer"
+              >
+                Start Your Transformation
+              </button>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* GALLERY SECTION */}
+      <section id="gallery" className="py-20 px-4 lg:px-8 max-w-7xl mx-auto border-t border-zinc-900">
+        <div className="text-center max-w-2xl mx-auto mb-16">
+          <span className="text-xs font-bold uppercase tracking-widest text-orange-400 bg-orange-500/10 px-3.5 py-1.5 rounded-full border border-orange-500/20">
+            LUXURY FACILITY
+          </span>
+          <h2 className="text-3xl sm:text-4xl font-black text-white mt-3">Royal Fitness Club Gallery</h2>
+          <p className="text-xs sm:text-sm text-zinc-400 mt-2">Take a visual tour of our cutting-edge training spaces and wellness zones.</p>
+        </div>
+
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+          {[
+            { title: 'Heavy Strength Arena', img: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=600&auto=format&fit=crop&q=80' },
+            { title: 'Olympic Lifting Rigs', img: 'https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?w=600&auto=format&fit=crop&q=80' },
+            { title: 'Functional CrossFit Turf', img: 'https://images.unsplash.com/photo-1517838277536-f5f99be501cd?w=600&auto=format&fit=crop&q=80' },
+            { title: 'Cardio & Conditioning Deck', img: 'https://images.unsplash.com/photo-1574680096145-d05b474e2155?w=600&auto=format&fit=crop&q=80' },
+            { title: 'Recovery & Cryotherapy Lounge', img: 'https://images.unsplash.com/photo-1518611012118-696072aa579a?w=600&auto=format&fit=crop&q=80' },
+            { title: 'VIP Coaching Studio', img: 'https://images.unsplash.com/photo-1567013127542-490d757e51fc?w=600&auto=format&fit=crop&q=80' },
+          ].map((item, idx) => (
+            <div key={idx} className="relative group rounded-2xl overflow-hidden h-48 sm:h-60 border border-zinc-800">
+              <img src={item.img} alt={item.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex items-end p-4">
+                <p className="text-xs sm:text-sm font-bold text-white group-hover:text-orange-400 transition-colors">{item.title}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* CONTACT SECTION */}
+      <section id="contact" className="py-20 px-4 lg:px-8 max-w-7xl mx-auto border-t border-zinc-900">
+        <div className="grid lg:grid-cols-12 gap-12 items-center">
+          <div className="lg:col-span-5 space-y-6">
+            <span className="text-xs font-bold uppercase tracking-widest text-orange-400 bg-orange-500/10 px-3.5 py-1.5 rounded-full border border-orange-500/20">
+              GET IN TOUCH
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-black text-white">Visit Royal Fitness Club</h2>
+            <p className="text-xs sm:text-sm text-zinc-400 leading-relaxed">
+              Step inside India's premier fitness destination. Speak with our concierge team or schedule your VIP tour today.
+            </p>
+
+            <div className="space-y-4 pt-2">
+              <div className="flex items-start gap-3 p-4 rounded-2xl bg-zinc-900/80 border border-zinc-800">
+                <MapPin className="w-5 h-5 text-orange-400 shrink-0 mt-0.5" />
+                <div>
+                  <p className="text-xs font-bold text-white">Branch Locations</p>
+                  <p className="text-xs text-zinc-400 mt-0.5">Central Connaught Place, Bandra Elite Center, Indiranagar Hub</p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-3 p-4 rounded-2xl bg-zinc-900/80 border border-zinc-800">
+                <PhoneCall className="w-5 h-5 text-orange-400 shrink-0 mt-0.5" />
+                <div>
+                  <p className="text-xs font-bold text-white">Concierge Desk</p>
+                  <p className="text-xs text-zinc-400 mt-0.5">+91 98765 43210 (Mon - Sun, 6:00 AM - 10:00 PM)</p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-3 p-4 rounded-2xl bg-zinc-900/80 border border-zinc-800">
+                <Mail className="w-5 h-5 text-orange-400 shrink-0 mt-0.5" />
+                <div>
+                  <p className="text-xs font-bold text-white">Official Support</p>
+                  <p className="text-xs text-zinc-400 mt-0.5">contact@royalfitnessclub.in</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="lg:col-span-7 rounded-3xl bg-zinc-900/90 border border-zinc-800 p-6 md:p-8 glass-panel shadow-2xl">
+            <h3 className="text-lg font-bold text-white mb-2">Send Us an Inquiry</h3>
+            <p className="text-xs text-zinc-400 mb-6">Have questions regarding memberships, corporate plans, or personal coaching?</p>
+
+            <form onSubmit={(e) => { e.preventDefault(); alert('Inquiry received! Our team will contact you shortly.'); }} className="space-y-4">
+              <div className="grid sm:grid-cols-2 gap-4">
+                <div>
+                  <label className="text-xs font-semibold text-zinc-300 block mb-1">Your Name</label>
+                  <input
+                    type="text"
+                    required
+                    placeholder="e.g. Ananya Roy"
+                    className="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-4 py-2.5 text-xs text-white focus:outline-none focus:border-orange-500"
+                  />
+                </div>
+                <div>
+                  <label className="text-xs font-semibold text-zinc-300 block mb-1">Phone Number</label>
+                  <input
+                    type="tel"
+                    required
+                    placeholder="+91 98765 00000"
+                    className="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-4 py-2.5 text-xs text-white focus:outline-none focus:border-orange-500"
+                  />
+                </div>
+              </div>
+
+              <div>
+                <label className="text-xs font-semibold text-zinc-300 block mb-1">Email Address</label>
+                <input
+                  type="email"
+                  required
+                  placeholder="ananya@example.com"
+                  className="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-4 py-2.5 text-xs text-white focus:outline-none focus:border-orange-500"
+                />
+              </div>
+
+              <div>
+                <label className="text-xs font-semibold text-zinc-300 block mb-1">Your Message or Query</label>
+                <textarea
+                  rows={3}
+                  required
+                  placeholder="Ask about personal training, membership tiers, or branch tours..."
+                  className="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-4 py-2.5 text-xs text-white focus:outline-none focus:border-orange-500 resize-none"
+                />
+              </div>
+
+              <button
+                type="submit"
+                className="w-full py-3 rounded-xl bg-gradient-to-r from-orange-500 to-amber-500 text-black font-extrabold text-xs shadow-lg hover:brightness-110 cursor-pointer transition-all flex items-center justify-center gap-2"
+              >
+                <Send className="w-4 h-4" />
+                <span>Submit Inquiry</span>
+              </button>
+            </form>
+          </div>
+        </div>
+      </section>
+
       {/* FAQ SECTION */}
       <section id="faq" className="py-20 px-4 lg:px-8 max-w-4xl mx-auto border-t border-zinc-900">
         <div className="text-center mb-12">
@@ -659,13 +909,16 @@ export const PublicWebsite: React.FC<PublicWebsiteProps> = ({ onSelectRole }) =>
         <div className="max-w-7xl mx-auto grid md:grid-cols-4 gap-8 text-xs text-zinc-400">
           <div className="space-y-3">
             <div className="flex items-center gap-2">
-              <div className="p-2 rounded-xl bg-orange-500 text-black font-extrabold">
-                <Dumbbell className="w-4 h-4 transform -rotate-45" />
+              <div className="w-8 h-8 rounded-xl bg-gradient-to-tr from-[#FF6A00] via-orange-500 to-amber-400 p-0.5 shadow-md">
+                <div className="w-full h-full bg-[#050505] rounded-[10px] flex items-center justify-center relative overflow-hidden">
+                  <Crown className="w-2.5 h-2.5 text-amber-300 absolute top-0.5 left-1/2 -translate-x-1/2" />
+                  <Dumbbell className="w-3.5 h-3.5 text-[#FF6A00] transform -rotate-45 mt-1.5" />
+                </div>
               </div>
               <span className="font-extrabold text-base text-white">{settings.gymName}</span>
             </div>
             <p className="text-zinc-500 leading-relaxed">{settings.tagline}</p>
-            <p className="text-zinc-600">© 2026 Iron Temple Fitness. All rights reserved.</p>
+            <p className="text-zinc-600">© 2026 Royal Fitness Club. All rights reserved.</p>
           </div>
 
           <div>
@@ -685,7 +938,7 @@ export const PublicWebsite: React.FC<PublicWebsiteProps> = ({ onSelectRole }) =>
             <ul className="space-y-2">
               <li className="flex items-center gap-2">
                 <Mail className="w-3.5 h-3.5 text-orange-400 shrink-0" />
-                <span>contact@irontemplefitness.in</span>
+                <span>contact@royalfitnessclub.in</span>
               </li>
               <li className="flex items-center gap-2">
                 <PhoneCall className="w-3.5 h-3.5 text-orange-400 shrink-0" />

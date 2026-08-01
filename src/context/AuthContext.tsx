@@ -78,7 +78,7 @@ const DEMO_USERS: Record<UserRole, User> = {
   admin: {
     id: 'u-admin-1',
     name: 'Marcus Vance (Admin)',
-    email: 'admin@irontemplefitness.in',
+    email: 'admin@royalfitnessclub.in',
     role: 'admin',
     avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80',
     branch: 'Central Connaught Place',
@@ -87,7 +87,7 @@ const DEMO_USERS: Record<UserRole, User> = {
   trainer: {
     id: 'u-tr-1',
     name: 'Coach Marcus Vance',
-    email: 'marcus@irontemplefitness.in',
+    email: 'marcus@royalfitnessclub.in',
     role: 'trainer',
     avatar: 'https://images.unsplash.com/photo-1567013127542-490d757e51fc?w=150&auto=format&fit=crop&q=80',
     branch: 'Central Connaught Place',
@@ -96,7 +96,7 @@ const DEMO_USERS: Record<UserRole, User> = {
   receptionist: {
     id: 'u-rec-1',
     name: 'Elena Rostova (Desk)',
-    email: 'reception@irontemplefitness.in',
+    email: 'reception@royalfitnessclub.in',
     role: 'receptionist',
     avatar: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150&auto=format&fit=crop&q=80',
     branch: 'Central Connaught Place',
@@ -143,14 +143,14 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   // Load from local storage if available
   useEffect(() => {
     try {
-      const savedRole = localStorage.getItem('apex_role') as UserRole;
+      const savedRole = (localStorage.getItem('royal_role') || localStorage.getItem('apex_role')) as UserRole;
       if (savedRole && DEMO_USERS[savedRole]) {
         setCurrentRole(savedRole);
         setCurrentUser(DEMO_USERS[savedRole]);
       }
-      const savedMembers = localStorage.getItem('apex_members');
+      const savedMembers = localStorage.getItem('royal_members') || localStorage.getItem('apex_members');
       if (savedMembers) setMembers(JSON.parse(savedMembers));
-      const savedPayments = localStorage.getItem('apex_payments');
+      const savedPayments = localStorage.getItem('royal_payments') || localStorage.getItem('apex_payments');
       if (savedPayments) setPayments(JSON.parse(savedPayments));
     } catch {
       // Ignore storage error
@@ -161,7 +161,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     setCurrentRole(role);
     setCurrentUser(DEMO_USERS[role] || null);
     try {
-      localStorage.setItem('apex_role', role);
+      localStorage.setItem('royal_role', role);
     } catch {
       // ignore
     }
@@ -169,13 +169,13 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
 
   const addMember = (newMem: Omit<Member, 'id' | 'qrCode' | 'joinedDate'>) => {
     const id = `mem-${Date.now().toString().slice(-4)}`;
-    const qrCode = `ITF-MEM-${Math.floor(100000 + Math.random() * 900000)}`;
+    const qrCode = `RFC-MEM-${Math.floor(100000 + Math.random() * 900000)}`;
     const joinedDate = new Date().toISOString().split('T')[0];
     const created: Member = { ...newMem, id, qrCode, joinedDate };
     const updated = [created, ...members];
     setMembers(updated);
     try {
-      localStorage.setItem('apex_members', JSON.stringify(updated));
+      localStorage.setItem('royal_members', JSON.stringify(updated));
     } catch {
       // ignore
     }
@@ -185,7 +185,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     const updated = members.map((m) => (m.id === id ? { ...m, ...updates } : m));
     setMembers(updated);
     try {
-      localStorage.setItem('apex_members', JSON.stringify(updated));
+      localStorage.setItem('royal_members', JSON.stringify(updated));
     } catch {
       // ignore
     }

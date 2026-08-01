@@ -16,8 +16,8 @@ import {
 } from '../types';
 
 export const initialGymSettings: GymSettings = {
-  gymName: 'Iron Temple Fitness',
-  tagline: 'Stronger Every Day',
+  gymName: 'Royal Fitness Club',
+  tagline: 'Train Like Royalty. Perform Like a Champion.',
   logo: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=150&auto=format&fit=crop&q=80',
   currency: 'INR',
   currencySymbol: '₹',
@@ -87,7 +87,7 @@ export const initialTrainers: Trainer[] = [
     id: 'tr-1',
     userId: 'u-tr-1',
     name: 'Coach Marcus Vance',
-    email: 'marcus@irontemplefitness.in',
+    email: 'marcus@royalfitnessclub.in',
     phone: '+91 98765 43210',
     avatar: 'https://images.unsplash.com/photo-1567013127542-490d757e51fc?w=300&auto=format&fit=crop&q=80',
     specialty: ['Hypertrophy', 'Powerlifting', 'Rehabilitation'],
@@ -101,7 +101,7 @@ export const initialTrainers: Trainer[] = [
     id: 'tr-2',
     userId: 'u-tr-2',
     name: 'Sarah Jenkins',
-    email: 'sarah@irontemplefitness.in',
+    email: 'sarah@royalfitnessclub.in',
     phone: '+91 98765 43211',
     avatar: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=300&auto=format&fit=crop&q=80',
     specialty: ['Fat Loss', 'HIIT', 'Functional Mobility'],
@@ -115,7 +115,7 @@ export const initialTrainers: Trainer[] = [
     id: 'tr-3',
     userId: 'u-tr-3',
     name: 'David Chen',
-    email: 'david@irontemplefitness.in',
+    email: 'david@royalfitnessclub.in',
     phone: '+91 98765 43212',
     avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=300&auto=format&fit=crop&q=80',
     specialty: ['CrossFit', 'Endurance Athleticism', 'Calisthenics'],
@@ -143,7 +143,7 @@ export const initialMembers: Member[] = [
     trainerId: 'tr-1',
     trainerName: 'Coach Marcus Vance',
     branch: 'Central Connaught Place',
-    qrCode: 'ITF-MEM-884920',
+    qrCode: 'RFC-MEM-884920',
     emergencyContact: 'Maria Rivera (+1 555-999-8877)',
     weightKg: 78.5,
     heightCm: 178,
@@ -168,7 +168,7 @@ export const initialMembers: Member[] = [
     trainerId: 'tr-2',
     trainerName: 'Sarah Jenkins',
     branch: 'Bandra Elite Center',
-    qrCode: 'ITF-MEM-330192',
+    qrCode: 'RFC-MEM-330192',
     emergencyContact: 'Dmitri Rostov (+1 555-888-7766)',
     weightKg: 62.0,
     heightCm: 167,
@@ -193,7 +193,7 @@ export const initialMembers: Member[] = [
     trainerId: 'tr-3',
     trainerName: 'David Chen',
     branch: 'Indiranagar Hub',
-    qrCode: 'ITF-MEM-771029',
+    qrCode: 'RFC-MEM-771029',
     emergencyContact: 'Taylor Smith (+1 555-777-6655)',
     weightKg: 85.0,
     heightCm: 182,
@@ -218,7 +218,7 @@ export const initialMembers: Member[] = [
     trainerId: 'tr-2',
     trainerName: 'Sarah Jenkins',
     branch: 'Central Connaught Place',
-    qrCode: 'ITF-MEM-119284',
+    qrCode: 'RFC-MEM-119284',
     emergencyContact: 'Carlos Martinez (+1 555-666-5544)',
     weightKg: 59.0,
     heightCm: 165,
@@ -277,7 +277,7 @@ export const initialAttendances: Attendance[] = [
     id: 'att-1',
     memberId: 'mem-1',
     memberName: 'Alex Rivera',
-    qrCode: 'ITF-MEM-884920',
+    qrCode: 'RFC-MEM-884920',
     checkInTime: '2026-08-01 07:15 AM',
     branch: 'Central Connaught Place',
     status: 'present',
@@ -286,7 +286,7 @@ export const initialAttendances: Attendance[] = [
     id: 'att-2',
     memberId: 'mem-2',
     memberName: 'Elena Rostova',
-    qrCode: 'ITF-MEM-330192',
+    qrCode: 'RFC-MEM-330192',
     checkInTime: '2026-08-01 08:30 AM',
     branch: 'Bandra Elite Center',
     status: 'present',
@@ -295,7 +295,7 @@ export const initialAttendances: Attendance[] = [
     id: 'att-3',
     memberId: 'mem-4',
     memberName: 'Sophia Martinez',
-    qrCode: 'ITF-MEM-119284',
+    qrCode: 'RFC-MEM-119284',
     checkInTime: '2026-08-01 09:05 AM',
     branch: 'Central Connaught Place',
     status: 'present',
@@ -581,7 +581,7 @@ export const initialTrialBookings: TrialBooking[] = [
 ];
 
 export const postgresSchemaSql = `-- =========================================================
--- IRON TEMPLE FITNESS ENTERPRISE POSTGRESQL / SUPABASE DATABASE SCHEMA
+-- ROYAL FITNESS CLUB ENTERPRISE POSTGRESQL / SUPABASE DATABASE SCHEMA
 -- Generated automatically for production deployment
 -- =========================================================
 

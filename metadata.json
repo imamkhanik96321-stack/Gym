@@ -1,6 +1,6 @@
 {
-  "name": "Iron Temple Fitness - Premium Fitness & Wellness Club",
-  "description": "Iron Temple Fitness - Premium Indian Fitness & Wellness Club with Member Portal, Trainer Hub, Reception Desk, Workouts, Diets, QR Attendance, and Analytics.",
+  "name": "Royal Fitness Club - Premium Fitness & Wellness Destination",
+  "description": "Royal Fitness Club is a premium fitness destination offering world-class strength training, functional fitness, personal coaching, nutrition guidance, and transformation programs in a luxurious environment.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

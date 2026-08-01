@@ -66,7 +66,7 @@ export const QRScannerModal: React.FC<QRScannerModalProps> = ({ isOpen, onClose 
                 <Search className="w-4 h-4 absolute left-3 top-3 text-zinc-500" />
                 <input
                   type="text"
-                  placeholder="e.g. ITF-MEM-884920 or +91 98765 43210"
+                  placeholder="e.g. RFC-MEM-884920 or +91 98765 43210"
                   value={inputCode}
                   onChange={(e) => setInputCode(e.target.value)}
                   className="w-full bg-zinc-950 border border-zinc-800 rounded-xl pl-9 pr-3 py-2 text-xs text-zinc-100 placeholder:text-zinc-600 focus:outline-none focus:border-orange-500"
