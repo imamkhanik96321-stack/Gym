@@ -32,7 +32,7 @@ import { MemberProgress } from './components/member/MemberProgress';
 import { ReceptionDashboard } from './components/reception/ReceptionDashboard';
 
 const AppContent: React.FC = () => {
-  const { currentRole, isAuthenticated, members } = useAuth();
+  const { currentRole, switchRole, isAuthenticated, members } = useAuth();
   const [activeTab, setActiveTab] = useState('dashboard');
   const [viewPublicSite, setViewPublicSite] = useState(false);
 
@@ -44,6 +44,11 @@ const AppContent: React.FC = () => {
   if (viewPublicSite || !isAuthenticated) {
     return (
       <PublicWebsite
+        onSelectRole={(role) => {
+          switchRole(role);
+          setViewPublicSite(false);
+          setActiveTab('dashboard');
+        }}
         onSwitchToDashboard={() => {
           setViewPublicSite(false);
           setActiveTab('dashboard');
