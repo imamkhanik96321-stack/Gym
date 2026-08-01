@@ -1,0 +1,6 @@
+{
+  "name": "Iron Temple Fitness - Premium Fitness & Wellness Club",
+  "description": "Iron Temple Fitness - Premium Indian Fitness & Wellness Club with Member Portal, Trainer Hub, Reception Desk, Workouts, Diets, QR Attendance, and Analytics.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
